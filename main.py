@@ -11,7 +11,7 @@ def get_time():
 
 
 if __name__ == '__main__':
-    print('Current time is', get_time())
+    print('News as of', get_time())
     print()
 
     # NPR https://feeds.npr.org/1001/rss.xml
@@ -28,5 +28,5 @@ if __name__ == '__main__':
         print()
         text_block += entry_quick + '\n\n'
 
-    pyperclip.copy(get_time() + '\n\n' + text_block)
+    pyperclip.copy('News as of ' + get_time() + '\n\n' + text_block)
     print('End of program')
