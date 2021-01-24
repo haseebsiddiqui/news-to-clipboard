@@ -6,7 +6,7 @@ import pyperclip
 
 def get_time():
     now = datetime.now()
-    current_time = now.strftime('%I:%M %p')
+    current_time = now.strftime('%Y-%m-%d %I:%M:%S %p')
     return current_time
 
 
@@ -14,9 +14,9 @@ if __name__ == '__main__':
     print('News as of', get_time())
     print()
 
-    # NPR https://feeds.npr.org/1001/rss.xml
-    # BBC World http://feeds.bbci.co.uk/news/world/rss.xml
-    news_url = 'http://feeds.bbci.co.uk/news/world/rss.xml'
+    feed_npr = 'https://feeds.npr.org/1001/rss.xml'
+    feed_bbc_world = 'http://feeds.bbci.co.uk/news/world/rss.xml'
+    news_url = feed_bbc_world
     parsed = feedparser.parse(news_url)
     news_entries = parsed['entries']
 
